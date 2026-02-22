@@ -25,3 +25,10 @@ app.use(express.json({limit:"5mb"}))
 app.use(express.urlencoded({extended:true, limit:"20kb"})) // extended means it can allow nested objects also
 app.use(express.static("public")) //to serve static files from public folder
 app.use(cookieParser()) // so that u can access the browser coookies and also able to set it
+
+
+// routes import
+import userRouter from "./routes/user.routes.js"
+
+// routes declarartion
+app.use("/api/v1/users", userRouter)
